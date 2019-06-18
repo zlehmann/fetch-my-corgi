@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   namespace :api do
-    resources :dog, only: [:index, :show]
-    resources :shelter, only: [:index, :show]
+    resources :dogs, only: [:index, :show]
+    resources :shelters, only: [:index, :show]
   end
 end
