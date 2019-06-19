@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
-import Dogs from './components/Dogs'
+import DogList from './components/DogList'
 import Shelters from './components/Shelters'
 import fetchDogs from './actions/dogActions'
+import FetchButton from './components/FetchButton'
 
 class App extends Component {
   constructor(props) {
@@ -17,8 +18,6 @@ class App extends Component {
     }
   }
 
-
-
   render() {
     return (
       <Router>
@@ -28,12 +27,16 @@ class App extends Component {
             <h2>Welcome to React</h2>
           </div>
           <p className="App-intro">
+            <FetchButton fetchDogs={this.props.fetchDogs}/>
             <Link to="/dogs">Dogs</Link>
             <Link to="/shelters">Shelters</Link>
           </p>
         </div>
+        <div>
+          <DogList dogs={this.props.dogs} />
+        </div>
 
-        <Route path="/dogs" component={Dogs} />
+        <Route path="/dogs" component={DogList} />
         <Route path="/shelters" component={Shelters} />
       </Router>
     );

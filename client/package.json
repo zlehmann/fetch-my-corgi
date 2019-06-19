@@ -6,7 +6,8 @@
     "presets": [
       "env",
       "react"
-    ]
+    ],
+    "proxy": "http://localhost:3001/"
   },
   "dependencies": {
     "react": "^16.8.6",
@@ -15,7 +16,8 @@
     "react-router": "^3.0.2",
     "react-scripts": "0.9.5",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "thunk": "0.0.1"
   },
   "devDependencies": {},
   "scripts": {
