@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Dog from './Dog'
 
 class DogList extends Component {
   handleClick(e, url) {
@@ -7,22 +8,10 @@ class DogList extends Component {
   }
 
   render() {
-    const dogList = (this.props.dogs.dogs || []).map((dog) =>
-        {return (
-          <div key={dog.id}>
-            <a href="#" value={dog.url} onClick={(e) => {this.handleClick(e, dog.url)}}>
-              <img src={dog.imageURL} alt=""/>
-              <h3>{dog.name}</h3>
-              <p>other information</p>
-            </a>
-          </div>
-        )}
-      )
-
-    return(
-      <div>
-        <h2>Dogs will get listed here.</h2>
-        <ul>{dogList}</ul>
+    const dogList = this.props.dogs.dogs || []
+    return (
+      <div className="dog-list">
+        {dogList.map(dog => <Dog key={dog.id} dog={dog} />)}
       </div>
     )
   }
