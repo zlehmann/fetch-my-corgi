@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 
 class DogList extends Component {
+  handleClick(e, url) {
+    e.preventDefault()
+    window.open(url, "_blank")
+  }
 
   render() {
-    console.log('props: ', this.props.dogs.dogs)
     const dogList = (this.props.dogs.dogs || []).map((dog) =>
-        <li key={dog.id}>{dog.name}</li>
+        {return (
+          <li key={dog.id}>
+            <a href="#" value={dog.url} onClick={(e) => {this.handleClick(e, dog.url)}}>
+              <div>
+                <img src={dog.imageURL} alt=""/>
+                <h3>{dog.name}</h3>
+                <p>other information</p>
+              </div>
+            </a>
+          </li>
+        )}
       )
 
     return(

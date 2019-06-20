@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190617010536) do
+ActiveRecord::Schema.define(version: 20190620150051) do
 
   create_table "dogs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20190617010536) do
     t.string   "name"
     t.string   "url"
     t.string   "source_id"
+    t.string   "imageURL"
   end
 
   create_table "shelters", force: :cascade do |t|
