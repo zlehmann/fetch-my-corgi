@@ -10,7 +10,12 @@ class DogListContainer extends Component {
   render() {
     return (
       <div>
-        <DogList dogs={this.props.dogs} />
+        <div className="split-screen">
+          <DogList dogs={this.props.dogs} />
+        </div>
+        <div className="split-screen">
+          <p> some other stuff</p>
+        </div>
       </div>
     )
   }
