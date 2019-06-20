@@ -7,6 +7,7 @@ export default function dogsReducer(state = { loading: false, dogs: [], shelters
       }
 
     case "FETCH_DOGS":
+    console.log('dogs fetched')
       return {
         ...state,
         loading: false,

@@ -9,15 +9,13 @@ class DogList extends Component {
   render() {
     const dogList = (this.props.dogs.dogs || []).map((dog) =>
         {return (
-          <li key={dog.id}>
+          <div key={dog.id}>
             <a href="#" value={dog.url} onClick={(e) => {this.handleClick(e, dog.url)}}>
-              <div>
-                <img src={dog.imageURL} alt=""/>
-                <h3>{dog.name}</h3>
-                <p>other information</p>
-              </div>
+              <img src={dog.imageURL} alt=""/>
+              <h3>{dog.name}</h3>
+              <p>other information</p>
             </a>
-          </li>
+          </div>
         )}
       )
 
