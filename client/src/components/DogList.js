@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class DogList extends Component {
 
   render() {
-    console.log('props: ', this.props.dogs)
-    const dogList = this.props.dogs.dogs.map((dog) =>
+    console.log('props: ', this.props.dogs.dogs)
+    const dogList = (this.props.dogs.dogs || []).map((dog) =>
         <li key={dog.id}>{dog.name}</li>
       )
 

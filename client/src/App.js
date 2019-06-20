@@ -33,10 +33,10 @@ class App extends Component {
           </p>
         </div>
         <div>
-          <DogList dogs={this.props.dogs} />
+          <h2>Add some intro text</h2>
         </div>
 
-        <Route path="/dogs" component={DogList} />
+        <Route path="/dogs" render={(props) => <DogList{...props} dogs={this.props.dogs} />} />
         <Route path="/shelters" component={Shelters} />
       </Router>
     );
