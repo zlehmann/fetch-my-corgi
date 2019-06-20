@@ -2,12 +2,12 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "babel": {
     "presets": [
       "env",
       "react"
-    ],
-    "proxy": "http://localhost:3001/"
+    ]
   },
   "dependencies": {
     "react": "^16.8.6",
