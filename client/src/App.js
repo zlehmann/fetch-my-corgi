@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
+import Home from './components/Home'
 import DogList from './components/DogList'
 import Shelters from './components/Shelters'
 import fetchDogs from './actions/dogActions'
@@ -28,14 +29,13 @@ class App extends Component {
           </div>
           <p className="App-intro">
             <FetchButton fetchDogs={this.props.fetchDogs}/>
+            <Link to="/">Home</Link>
             <Link to="/dogs">Dogs</Link>
             <Link to="/shelters">Shelters</Link>
           </p>
         </div>
-        <div>
-          <h2>Add some intro text</h2>
-        </div>
 
+        <Route exact path="/" component={Home} />
         <Route path="/dogs" render={(props) => <DogList{...props} dogs={this.props.dogs} />} />
         <Route path="/shelters" component={Shelters} />
       </Router>
