@@ -8,4 +8,5 @@ class Api::DogsController < ApplicationController
     @dog = Dog.find(params[:id])
     render json: @dog
   end
+
 end

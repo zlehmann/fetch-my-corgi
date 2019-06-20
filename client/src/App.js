@@ -5,8 +5,9 @@ import './App.css';
 import { connect } from 'react-redux'
 import Home from './components/Home'
 import DogListContainer from './containers/DogListContainer'
-import Shelters from './components/Shelters'
+import ShelterListContainer from './containers/ShelterListContainer'
 import fetchDogs from './actions/dogActions'
+import fetchShelters from './actions/shelterActions'
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class App extends Component {
 
         <Route exact path="/" component={Home} />
         <Route path="/dogs" render={(props) => <DogListContainer{...props} fetchDogs={this.props.fetchDogs} dogs={this.props.dogs} />} />
-        <Route path="/shelters" component={Shelters} />
+        <Route path="/shelters" render={(props) => <ShelterListContainer{...props} fetchShelters={this.props.fetchShelters} shelters={this.props.shelters} />} />
       </Router>
     );
   }
@@ -43,7 +44,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    dogs: state.dogs
+    dogs: state.dogs,
+    shelters: state.shelters
   }
 }
 
@@ -51,6 +53,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchDogs: () => {
       dispatch(fetchDogs())
+    },
+    fetchShelters: () => {
+      dispatch(fetchShelters())
     }
   }
 }
