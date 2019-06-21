@@ -15,6 +15,7 @@ class Shelter extends Component {
         <a href="#" value={shelter.url} onClick={(e) => {this.handleClick(e, shelter.url)}}>
           <h3>{shelter.name}</h3>
           <p>{shelter.city}</p>
+          <p>{shelter.state}</p>
         </a>
       </div>
     )
