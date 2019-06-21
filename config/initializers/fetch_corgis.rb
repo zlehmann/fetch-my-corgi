@@ -10,7 +10,7 @@ t_res = Unirest.post "https://api.petfinder.com/v2/oauth2/token",
 
 ENV["PETFINDER_TOKEN"] = t_res.body['access_token']
 
-response = Unirest.get "https://api.petfinder.com/v2/animals?type=dog&breed=corgi",
+response = Unirest.get "https://api.petfinder.com/v2/animals?type=dog&breed=corgi&gender=male&limit=100",
               headers: {Authorization: "Bearer #{ENV["PETFINDER_TOKEN"]}"}
 
 dog_list = response.body['animals']
@@ -34,8 +34,6 @@ else
         imageURL: image_url,
         description: dog['description']
       )
-      new_dog.save
-
     end
   end
 end

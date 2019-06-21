@@ -19,3 +19,7 @@ div.split-screen {
   display: inline-block;
   vertical-align: top;
 }
+
+div.dog-details {
+  width: 300px;
+}

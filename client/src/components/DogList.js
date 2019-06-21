@@ -10,8 +10,12 @@ class DogList extends Component {
   render() {
     const dogList = this.props.dogs.dogs || []
     return (
-      <div className="dog-list">
-        {dogList.map(dog => <Dog key={dog.id} dog={dog} />)}
+      <div>
+        <div className="dog-list">
+          {dogList.map(dog => <Dog key={dog.id} dog={dog} />)}
+        </div>
+        <div className="dog-details">
+        </div>
       </div>
     )
   }
