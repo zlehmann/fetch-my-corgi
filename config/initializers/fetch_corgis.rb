@@ -15,15 +15,27 @@ response = Unirest.get "https://api.petfinder.com/v2/animals?type=dog&breed=corg
 
 dog_list = response.body['animals']
 
-dog_list.each { |dog|
-  new_dog = Dog.find_by source_id: dog['id']
-  binding.pry
-  if new_dog != nil
-    Dog.create(
-      name: dog['name'],
-      source_id: dog['id'],
-      url: dog['url'],
-      imageURL: dog['photos'][0]['small']
-    )
+if dog_list == nil
+  puts "dog_list didn't populate"
+else
+  dog_list.each do |dog|
+    existing_dog = Dog.find_by source_id: dog['id']
+    if existing_dog == nil
+      if dog['photos'] == []
+        image_url = ""
+      else
+        image_url = dog['photos'][0]['small']
+      end
+
+      new_dog = Dog.create(
+        name: dog['name'],
+        source_id: dog['id'],
+        url: dog['url'],
+        imageURL: image_url,
+        description: dog['description']
+      )
+      new_dog.save
+
+    end
   end
-}
+end
