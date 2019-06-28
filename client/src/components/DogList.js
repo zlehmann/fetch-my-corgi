@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import Dog from './Dog'
+import DogDetail from './DogDetail'
 
 class DogList extends Component {
   handleClick(e, url) {
     e.preventDefault()
     window.open(url, "_blank")
+  }
+
+  dog_click () {
+    console.log('hit')
   }
 
   render() {
@@ -15,6 +20,7 @@ class DogList extends Component {
           {dogList.map(dog => <Dog key={dog.id} dog={dog} />)}
         </div>
         <div className="dog-details">
+          <DogDetail dog={this.dog_click} />
         </div>
       </div>
     )
