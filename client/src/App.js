@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       loading: false,
       dogs: [],
-      shelters: []
+      shelters: [],
     }
   }
 
@@ -45,7 +45,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     dogs: state.dogs,
-    shelters: state.shelters
+    shelters: state.shelters,
   }
 }
 

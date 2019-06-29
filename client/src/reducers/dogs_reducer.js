@@ -13,6 +13,7 @@ export default function dogsReducer(state = { loading: false, dogs: [], shelters
         dogs: action.payload
       }
 
+
     default:
       return state
   }

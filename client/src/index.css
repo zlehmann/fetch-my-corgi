@@ -14,7 +14,7 @@ div.dog-card {
 }
 
 div.split-screen {
-  width: auto;
+  width: 50%;
   margin: auto;
   display: inline-block;
   vertical-align: top;

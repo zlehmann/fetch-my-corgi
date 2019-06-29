@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 
 class Dog extends Component {
-  handleClick(e, url) {
-    e.preventDefault()
-    let data = fetch(url)
-    .then(response => response.json())
-    console.log(data)
-  }
-
   render() {
     const dog = this.props.dog
     return (
-      <div className="dog-card">
-        <a href="#" value={dog.url} onClick={(e) => {this.handleClick(e, dog.url)}}>
+      <div className="dog-card" id={dog.id} onClick={(e) => {this.props.handleClick(e, dog.id)}}>
+        <a href="#" value={dog.url}>
           <h3>{dog.name}</h3>
           <img src={dog.imageURL} alt="" height="150" />
         </a>
