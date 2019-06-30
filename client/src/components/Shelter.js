@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 
 class Shelter extends Component {
-  handleClick(e, url) {
-    e.preventDefault()
-    let data = fetch(url)
-    .then(response => response.json())
-    console.log(data)
-  }
-
   render() {
     const shelter = this.props.shelter
     return (
-      <div className="shelter-card">
-        <a href="#" value={shelter.url} onClick={(e) => {this.handleClick(e, shelter.url)}}>
+      <div className="shelter-card" id={shelter.id} onClick={(e) => {this.props.handleClick(e, shelter.id)}}>
+        <a href="#" value={shelter.url}>
           <h3>{shelter.name}</h3>
-          <p>{shelter.city}</p>
-          <p>{shelter.state}</p>
+          <p>{shelter.address}</p>
+          <p>{shelter.city}, {shelter.state}</p>
         </a>
       </div>
     )
