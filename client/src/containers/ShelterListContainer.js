@@ -39,9 +39,7 @@ class ShelterListContainer extends Component {
           <ShelterList shelters={this.props.shelters} handleClick={this.handleClick}/>
         </div>
         <div className="split-screen">
-          <div className="shelter-details">
-            <ShelterDetail shelter={this.state.currentShelter} />
-          </div>
+          <ShelterDetail shelter={this.state.currentShelter} />
         </div>
       </div>
     )

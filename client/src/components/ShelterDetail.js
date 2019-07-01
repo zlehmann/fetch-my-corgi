@@ -4,7 +4,7 @@ class ShelterDetail extends Component {
 
   render() {
     return (
-      <div>
+      <div className="shelter-detail">
         <h2>{this.props.shelter.name}</h2>
         <p>{this.props.shelter.address}</p>
         <p>{this.props.shelter.city}, {this.props.shelter.state}</p>

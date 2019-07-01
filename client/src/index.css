@@ -14,12 +14,55 @@ div.dog-card {
 }
 
 div.split-screen {
-  width: 50%;
+  width: 45%;
   margin: auto;
+  padding: 10px;
   display: inline-block;
   vertical-align: top;
 }
 
 div.dog-details {
   width: 300px;
+}
+
+div.welcome-splash {
+  width: 500px;
+  margin: auto;
+}
+
+div.dog-card {
+  border-right: 1px solid black;
+  padding: 10px;
+}
+
+div.dog-card a {
+  text-decoration: none;
+  color: black;
+}
+
+div.dog-card h3 {
+  margin-bottom: 0px;
+}
+
+div.shelter-card {
+  margin-right: 25px;
+  border-bottom: 1px solid black;
+}
+
+div.shelter-card a {
+  text-decoration: none;
+}
+
+div.shelter-card h3 {
+  color: black;
+  margin-bottom: 0px;
+}
+
+div.shelter-card p {
+  color: black;
+  margin: 0;
+}
+
+div.shelter-detail p {
+  margin: 0;
 }

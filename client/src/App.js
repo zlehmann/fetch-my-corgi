@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import Home from './components/Home'
@@ -24,14 +23,14 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
+            <img src="https://png2.kisspng.com/sh/be55db089fa111b9525f26220f7a8784/L0KzQYm3WcI5N6NAjJH0aYP2gLBuTgBmdZN3h91uLYfofMTvTfNwephuRdVqcnTsd7L1TgdmdKRtRdV4cnfsPcT7ifNsbaMye9H7Z3n2PbPsgBF2e5Yygd82c3HnPYbpgfRjOWE6fac5YUa6PomBUsQzOGU8Sac8OEGzSYi3Uck0QGMziNDw/kisspng-pembroke-welsh-corgi-cardigan-welsh-corgi-sticker-corgis-because-im-sad-5badb105e50a67.8824204715381097019382.png" className="App-logo" alt="logo" align="left"/>
+            <h2>Fetch My Corgi!</h2>
           </div>
-          <p className="App-intro">
+          <div className="App-intro">
             <Link to="/">Home</Link>
             <Link to="/dogs">Dogs</Link>
             <Link to="/shelters">Shelters</Link>
-          </p>
+          </div>
         </div>
 
         <Route exact path="/" component={Home} />
