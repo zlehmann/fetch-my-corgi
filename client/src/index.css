@@ -6,11 +6,16 @@ body {
 
 img {
   display: inline-block;
+  max-width: 150px;
+  padding: 5px;
 }
 
 div.dog-card {
   display: inline-block;
   text-align: center;
+  width: 160px;
+  border-right: 1px solid black;
+  padding: 10px;
 }
 
 div.split-screen {
@@ -22,17 +27,13 @@ div.split-screen {
 }
 
 div.dog-details {
-  width: 300px;
+  left: 65%;
+  position: absolute;
 }
 
 div.welcome-splash {
   width: 500px;
   margin: auto;
-}
-
-div.dog-card {
-  border-right: 1px solid black;
-  padding: 10px;
 }
 
 div.dog-card a {
@@ -44,8 +45,18 @@ div.dog-card h3 {
   margin-bottom: 0px;
 }
 
+div.dog-list {
+  overflow-y: auto;
+  position: absolute;
+  top: 170px;
+  left: 0;
+  bottom: 0;
+  right: 35%;
+}
+
 div.shelter-card {
   margin-right: 25px;
+  color: black;
   border-bottom: 1px solid black;
 }
 
@@ -60,9 +71,18 @@ div.shelter-card h3 {
 
 div.shelter-card p {
   color: black;
-  margin: 0;
 }
 
-div.shelter-detail p {
-  margin: 0;
+div.shelter-detail {
+  left: 65%;
+  position: absolute;
+}
+
+div.shelter-list {
+  overflow-y: auto;
+  position: absolute;
+  top: 170px;
+  left: 0;
+  bottom: 0;
+  right: 35%;
 }

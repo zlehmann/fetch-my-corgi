@@ -7,7 +7,7 @@ class Dog extends Component {
       <div className="dog-card" id={dog.id} onClick={(e) => {this.props.handleClick(e, dog.id)}}>
         <a href="#" value={dog.url}>
           <h3>{dog.name}</h3>
-          <img src={dog.imageURL} alt="" height="150" />
+          <img src={dog.imageURL} alt="" height="150"/>
         </a>
       </div>
     )
