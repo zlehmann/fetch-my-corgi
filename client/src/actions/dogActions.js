@@ -1,4 +1,4 @@
-export default function fetchDogs() {
+export function fetchDogs() {
   return (dispatch) => {
     dispatch({type: 'LOADING_DOGS'});
     return fetch("/api/dogs")
@@ -6,5 +6,17 @@ export default function fetchDogs() {
     .then(responseJSON => {
        dispatch({type: "FETCH_DOGS", payload: responseJSON})
     })
+  }
+}
+
+export function fetchDog(dogs, id) {
+  console.log('dogs: ', dogs)
+  return (dispatch) => {
+    dispatch(
+      {
+        type: "FETCH_DOG",
+        payload: dogs.dogs.find((dog) => dog.id === id)
+      }
+    );
   }
 }

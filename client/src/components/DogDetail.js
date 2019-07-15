@@ -8,6 +8,7 @@ class DogDetail extends Component {
       description = this.props.dog.description
     }
 
+    
     return (
       <div>
         <h2>{this.props.dog.name}</h2>

@@ -3,35 +3,24 @@ import DogList from '../components/DogList'
 import DogDetail from '../components/DogDetail'
 
 class DogListContainer extends Component {
-  _isMounted = false;
 
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
-    this.state = {
-      currentDog: {}
-    }
   }
 
   componentDidMount() {
-    this._isMounted = true;
     this.props.fetchDogs()
   }
 
   handleClick(e, id) {
     e.preventDefault()
-    let url = `/api/dogs/${id}`
-    if (this._isMounted) {
-      fetch(url).then(response => response.json())
-      .then(response => this.setState({currentDog: response}))
-    }
-  }
-
-  componentWillUnmount() {
-    this._isMounted = false;
+    console.log('handleClick: ', id)
+    this.props.fetchDog(this.props.dogs, id)
   }
 
   render() {
+    console.log(this.props.dogs)
     return (
       <div>
         <div className="split-screen">
@@ -39,7 +28,7 @@ class DogListContainer extends Component {
         </div>
         <div className="split-screen">
           <div className="dog-details">
-            <DogDetail dog={this.state.currentDog} />
+            <DogDetail dog={this.props.dogs.currentDog} />
           </div>
         </div>
       </div>
