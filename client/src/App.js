@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Home from './components/Home'
 import DogListContainer from './containers/DogListContainer'
 import ShelterListContainer from './containers/ShelterListContainer'
-import {fetchDogs, fetchDog} from './actions/dogActions'
+import {fetchDogs, fetchDog, toggleFav} from './actions/dogActions'
 import {fetchShelters, fetchShelter} from './actions/shelterActions'
 
 class App extends Component {
@@ -33,7 +33,7 @@ class App extends Component {
         </div>
 
         <Route exact path="/" component={Home} />
-        <Route path="/dogs" render={(props) => <DogListContainer{...props} fetchDogs={this.props.fetchDogs} fetchDog={this.props.fetchDog} dogs={this.props.dogs}/>} />
+        <Route path="/dogs" render={(props) => <DogListContainer{...props} fetchDogs={this.props.fetchDogs} fetchDog={this.props.fetchDog} toggleFav={this.props.toggleFav} dogs={this.props.dogs}/>} />
         <Route path="/shelters" render={(props) => <ShelterListContainer{...props} fetchShelters={this.props.fetchShelters} fetchShelter={this.props.fetchShelter} shelters={this.props.shelters} />} />
       </Router>
     );
@@ -60,6 +60,9 @@ const mapDispatchToProps = dispatch => {
     },
     fetchShelter: (shelters, id) => {
       dispatch(fetchShelter(shelters, id))
+    },
+    toggleFav: (dogs, id) => {
+      dispatch(toggleFav(dogs, id))
     }
   }
 }

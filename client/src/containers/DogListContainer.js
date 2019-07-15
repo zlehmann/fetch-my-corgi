@@ -7,6 +7,7 @@ class DogListContainer extends Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    this.handleFavorite = this.handleFavorite.bind(this)
   }
 
   componentDidMount() {
@@ -18,8 +19,12 @@ class DogListContainer extends Component {
     this.props.fetchDog(this.props.dogs, id)
   }
 
+  handleFavorite(e, id) {
+    e.preventDefault()
+    this.props.toggleFav(this.props.dogs, id)
+  }
+
   render() {
-        console.log('DogListContainer: ', this.props)
     return (
       <div>
         <div className="split-screen">
@@ -27,7 +32,7 @@ class DogListContainer extends Component {
         </div>
         <div className="split-screen">
           <div className="dog-details">
-            <DogDetail dog={this.props.dogs.currentDog} />
+            <DogDetail dog={this.props.dogs.currentDog} handleFavorite={this.handleFavorite}/>
           </div>
         </div>
       </div>

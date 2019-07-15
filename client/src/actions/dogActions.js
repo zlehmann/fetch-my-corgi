@@ -19,3 +19,22 @@ export function fetchDog(dogs, id) {
     );
   }
 }
+
+export function toggleFav(dogs, id) {
+  console.log('action: ', dogs)
+  const dog = dogs.dogs.find((dog) => dog.id === id)
+  console.log(dog)
+  if (dog.fav === true){
+    dog.fav = false
+  } else {
+    dog.fav = true
+  }
+  return (dispatch) => {
+    dispatch(
+      {
+        type: "TOGGLE_FAV",
+        payload: dog
+      }
+    );
+  }
+}

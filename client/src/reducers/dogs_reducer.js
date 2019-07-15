@@ -1,4 +1,4 @@
-export default function dogsReducer(state = { loading: false, dogs: [], currentDog: {'name': "placeholder", 'imageURL': "test.com"} }, action) {
+export default function dogsReducer(state = { loading: false, dogs: [], currentDog: {'name': "placeholder", 'imageURL': "test.com", 'fav': false} }, action) {
   switch (action.type) {
     case "LOADING_DOGS":
       return {
@@ -17,6 +17,12 @@ export default function dogsReducer(state = { loading: false, dogs: [], currentD
       return {
         ...state,
         loading: false,
+        currentDog: action.payload
+      }
+
+    case "TOGGLE_FAV":
+      return {
+        ...state,
         currentDog: action.payload
       }
 
