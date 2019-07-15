@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class ShelterDetail extends Component {
 
   render() {
+    console.log('ShelterDetail props: ', this.props)
     return (
       <div className="shelter-detail">
         <h2>{this.props.shelter.name}</h2>

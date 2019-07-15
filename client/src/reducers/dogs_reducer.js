@@ -13,12 +13,12 @@ export default function dogsReducer(state = { loading: false, dogs: [], currentD
         dogs: action.payload
       }
 
-      case "FETCH_DOG":
-        return {
-          ...state,
-          loading: false,
-          currentDog: action.payload
-        }
+    case "FETCH_DOG":
+      return {
+        ...state,
+        loading: false,
+        currentDog: action.payload
+      }
 
     default:
       return state

@@ -15,12 +15,11 @@ class DogListContainer extends Component {
 
   handleClick(e, id) {
     e.preventDefault()
-    console.log('handleClick: ', id)
     this.props.fetchDog(this.props.dogs, id)
   }
 
   render() {
-    console.log(this.props.dogs)
+        console.log('DogListContainer: ', this.props)
     return (
       <div>
         <div className="split-screen">

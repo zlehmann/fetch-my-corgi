@@ -10,7 +10,6 @@ export function fetchDogs() {
 }
 
 export function fetchDog(dogs, id) {
-  console.log('dogs: ', dogs)
   return (dispatch) => {
     dispatch(
       {

@@ -1,4 +1,4 @@
-export default function fetchShelters() {
+export function fetchShelters() {
   return (dispatch) => {
     dispatch({type: 'LOADING_SHELTERS'});
     return fetch("/api/shelters")
@@ -6,5 +6,16 @@ export default function fetchShelters() {
     .then(responseJSON => {
        dispatch({type: "FETCH_SHELTERS", payload: responseJSON})
     })
+  }
+}
+
+export function fetchShelter(shelters, id) {
+  return (dispatch) => {
+    dispatch(
+      {
+        type: "FETCH_SHELTER",
+        payload: shelters.shelters.find((shelter) => shelter.id === id)
+      }
+    );
   }
 }
