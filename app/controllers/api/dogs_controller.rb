@@ -1,4 +1,6 @@
 class Api::DogsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:update]
+
   def index
     @dogs = Dog.all
     render json: @dogs
@@ -11,7 +13,7 @@ class Api::DogsController < ApplicationController
 
   def update
     @dog = Dog.find(params[:id])
-    @dog.update_attributes()
+    @dog.update_attributes(dog_param)
     render json: @dog
   end
 

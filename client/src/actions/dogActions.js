@@ -32,7 +32,8 @@ export function toggleFav(dogs, id) {
     return fetch(`/api/dogs/${dog.id}`, {
       method: "PUT",
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'skip_before_action': 'verify_authenticity_token'
       },
       body: JSON.stringify(dog)
     })
