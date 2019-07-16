@@ -7,7 +7,6 @@ class DogDetail extends Component {
     if (this.props.dog.description !== "") {
       description = this.props.dog.description
     }
-    console.log('detail dog: ', this.props.dog.fav)
     return (
       <div>
         <h2>{this.props.dog.name}</h2>
