@@ -1,3 +1,10 @@
+export function updateBackend() {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_DOGS'});
+    return fetch()
+  }
+}
+
 export function fetchDogs() {
   return (dispatch) => {
     dispatch({type: 'LOADING_DOGS'});
@@ -32,13 +39,22 @@ export function toggleFav(dogs, id) {
     return fetch(`/api/dogs/${dog.id}`, {
       method: "PUT",
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'skip_before_action': 'verify_authenticity_token'
       },
       body: JSON.stringify(dog)
     })
     .then(response => response.json())
     .then(responseJSON => {
       dispatch({type: "TOGGLE_FAV", payload: responseJSON})
+    })
+  }
+}
+
+export function fetchFavorites(dogs) {
+  return (dispatch) => {
+      dispatch({type: 'FETCH_FAVORITES',
+      payload: dogs.dogs.filter(dog => {return dog.fav === true})
     })
   }
 }

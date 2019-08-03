@@ -29,6 +29,7 @@ class App extends Component {
             <Link to="/">Home</Link>
             <Link to="/dogs">Dogs</Link>
             <Link to="/shelters">Shelters</Link>
+            <button onClick={this.props.update_backend}>Update Corgis!</button>
           </div>
         </div>
 
@@ -49,6 +50,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    update_backend: () => {
+      dispatch(updateBackend())
+    },
     fetchDogs: () => {
       dispatch(fetchDogs())
     },
@@ -63,7 +67,7 @@ const mapDispatchToProps = dispatch => {
     },
     toggleFav: (dogs, id) => {
       dispatch(toggleFav(dogs, id))
-    }
+    },
   }
 }
 
