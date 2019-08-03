@@ -1,6 +1,7 @@
 require 'unirest'
 require 'pry'
 
+=begin
 #get access token from petfinder servers
 t_res = Unirest.post "https://api.petfinder.com/v2/oauth2/token",
         parameters: {"grant_type" => "client_credentials",
@@ -37,3 +38,4 @@ else
     end
   end
 end
+=end

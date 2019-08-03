@@ -1,4 +1,5 @@
 export function updateBackend() {
+  console.log('hit updateBackend')
   return (dispatch) => {
     dispatch({type: 'LOADING_DOGS'});
     return fetch("/api/update_backend")

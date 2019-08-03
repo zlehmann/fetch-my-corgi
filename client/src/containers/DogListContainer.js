@@ -25,6 +25,7 @@ class DogListContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <div className="split-screen">
@@ -32,7 +33,7 @@ class DogListContainer extends Component {
         </div>
         <div className="split-screen">
           <div className="dog-details">
-            <DogDetail dog={this.props.dogs.currentDog} handleFavorite={this.handleFavorite}/>
+            <DogDetail dog={this.props.dogs.currentDog} updateBackend={this.props.updateBackend} handleFavorite={this.handleFavorite}/>
           </div>
         </div>
       </div>
