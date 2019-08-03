@@ -33,7 +33,7 @@ class App extends Component {
         </div>
 
         <Route exact path="/" component={Home} />
-        <Route path="/dogs" render={(props) => <DogListContainer{...props} fetchDogs={this.props.fetchDogs} fetchDog={this.props.fetchDog} toggleFav={this.props.toggleFav} update_backend={this.props.updateBackend} dogs={this.props.dogs}/>} />
+        <Route path="/dogs" render={(props) => <DogListContainer{...props} fetchDogs={this.props.fetchDogs} fetchDog={this.props.fetchDog} toggleFav={this.props.toggleFav} updateBackend={this.props.updateBackend} dogs={this.props.dogs}/>} />
         <Route path="/shelters" render={(props) => <ShelterListContainer{...props} fetchShelters={this.props.fetchShelters} fetchShelter={this.props.fetchShelter} shelters={this.props.shelters} />} />
       </Router>
     );

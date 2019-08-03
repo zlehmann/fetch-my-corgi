@@ -29,11 +29,11 @@ class DogListContainer extends Component {
     return (
       <div>
         <div className="split-screen">
-          <DogList dogs={this.props.dogs} handleClick={this.handleClick}/>
+          <DogList dogs={this.props.dogs} updateBackend={this.props.updateBackend} handleClick={this.handleClick}/>
         </div>
         <div className="split-screen">
           <div className="dog-details">
-            <DogDetail dog={this.props.dogs.currentDog} updateBackend={this.props.updateBackend} handleFavorite={this.handleFavorite}/>
+            <DogDetail dog={this.props.dogs.currentDog} handleFavorite={this.handleFavorite}/>
           </div>
         </div>
       </div>
