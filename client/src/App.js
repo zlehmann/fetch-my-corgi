@@ -29,7 +29,6 @@ class App extends Component {
             <Link to="/">Home</Link>
             <Link to="/dogs">Dogs</Link>
             <Link to="/shelters">Shelters</Link>
-            <button onClick={this.props.update_backend}>Update Corgis!</button>
           </div>
         </div>
 

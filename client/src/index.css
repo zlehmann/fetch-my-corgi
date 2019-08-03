@@ -48,7 +48,7 @@ div.dog-card h3 {
 div.dog-list {
   overflow-y: auto;
   position: absolute;
-  top: 170px;
+  top: 200px;
   left: 0;
   bottom: 0;
   right: 35%;
