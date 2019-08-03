@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Home from './components/Home'
 import DogListContainer from './containers/DogListContainer'
 import ShelterListContainer from './containers/ShelterListContainer'
-import {fetchDogs, fetchDog, toggleFav} from './actions/dogActions'
+import {fetchDogs, fetchDog, toggleFav, updateBackend} from './actions/dogActions'
 import {fetchShelters, fetchShelter} from './actions/shelterActions'
 
 class App extends Component {

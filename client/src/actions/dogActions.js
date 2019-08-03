@@ -1,7 +1,9 @@
 export function updateBackend() {
   return (dispatch) => {
     dispatch({type: 'LOADING_DOGS'});
-    return fetch()
+    return fetch("/api/update_backend")
+    .then(response => {dispatch({type: "UPDATE_BACKEND"})
+    })
   }
 }
 

@@ -17,6 +17,10 @@ class Api::DogsController < ApplicationController
     render json: @dog
   end
 
+  def update_backend
+
+  end
+
   private
     def dog_param
       params.require(:dog).permit(:fav)
