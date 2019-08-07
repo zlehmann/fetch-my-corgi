@@ -2,7 +2,7 @@ export default function dogsReducer(
   state = {
     loading: false,
     dogs: [],
-    currentDog: {'name': "placeholder", 'imageURL': "", 'fav': false}
+    currentDog: {'name': "", 'imageURL': "", 'fav': false}
   },
   action) {
   switch (action.type) {

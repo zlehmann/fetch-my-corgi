@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class DogDetail extends Component {
 
   render() {
-    let description = "no description available."
+    let description = "No description available."
     if (this.props.dog.description !== "") {
       description = this.props.dog.description
     }

@@ -1,7 +1,8 @@
 require 'unirest'
 require 'pry'
 
-=begin
+#clear existing dogs
+Dog.delete_all
 #get access token from petfinder servers
 t_res = Unirest.post "https://api.petfinder.com/v2/oauth2/token",
         parameters: {"grant_type" => "client_credentials",
@@ -38,4 +39,3 @@ else
     end
   end
 end
-=end
