@@ -29,12 +29,18 @@ else
         image_url = dog['photos'][0]['small']
       end
 
+      if dog['description'] == ""
+        description = "There isn't a description of this corgi, but we're sure he's awesome!"
+      else
+        description = dog['description']
+      end
+
       new_dog = Dog.create(
         name: dog['name'],
         source_id: dog['id'],
         url: dog['url'],
         imageURL: image_url,
-        description: dog['description']
+        description: description
       )
     end
   end
