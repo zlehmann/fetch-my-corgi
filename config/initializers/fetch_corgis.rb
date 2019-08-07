@@ -29,10 +29,10 @@ else
         image_url = dog['photos'][0]['small']
       end
 
-      if dog['description'] == ""
+      if dog['description'] == ''
         description = "There isn't a description of this corgi, but we're sure he's awesome!"
       else
-        description = dog['description']
+        description = dog['description'] =~ /&#039;/
       end
 
       new_dog = Dog.create(
