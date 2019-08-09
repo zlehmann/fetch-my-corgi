@@ -24,15 +24,15 @@ else
     existing_dog = Dog.find_by source_id: dog['id']
     if existing_dog == nil
       if dog['photos'] == []
-        image_url = ""
+        image_url = "/assets/basic1-145_no_image-512.png"
       else
         image_url = dog['photos'][0]['small']
       end
 
-      if dog['description'] == ''
+      if dog['description'] == nil
         description = "There isn't a description of this corgi, but we're sure he's awesome!"
       else
-        description = dog['description'] =~ /&#039;/
+        description = dog['description'] 
       end
 
       new_dog = Dog.create(
