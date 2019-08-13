@@ -32,7 +32,7 @@ else
       if dog['description'] == nil
         description = "There isn't a description of this corgi, but we're sure he's awesome!"
       else
-        description = dog['description'] 
+        description = dog['description'].gsub(/&#039;/, "'")
       end
 
       new_dog = Dog.create(
