@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 class DogDetail extends Component {
 
   render() {
-    let description = "No description available."
-    if (this.props.dog.description !== "") {
-      description = this.props.dog.description
-    }
+    let description = this.props.dog.description
 
     let btnText = ""
     if(this.props.dog.fav === true) {
@@ -15,14 +12,22 @@ class DogDetail extends Component {
       btnText = "Add to Favorites"
     }
 
-    return (
-      <div>
-        <h2>{this.props.dog.name}</h2>
-        <img src={this.props.dog.imageURL} alt=""/>
-        <p>Description: {description}</p>
-        <button value={btnText} onClick={(e) => {this.props.handleFavorite(e, this.props.dog.id)}}>{btnText}</button>
-      </div>
-    )
+    if (this.props.dog.id === undefined) {
+      return (
+        <div>
+          <h2>Select a dog to view more information!</h2>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <h2>{this.props.dog.name}</h2>
+          <img src={this.props.dog.imageURL} alt=""/>
+          <p><b>Description:</b> {description}</p>
+          <button value={btnText} onClick={(e) => {this.props.handleFavorite(e, this.props.dog.id)}}>{btnText}</button>
+        </div>
+      )
+    }
   }
 }
 
